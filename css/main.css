@@ -1,0 +1,509 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #121213;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.alert-box {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.alert-box .alert {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background: #ddd;
+  color: #121213;
+  font-size: 1.15rem;
+  border-radius: 0.25rem;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  -webkit-transform: translateX(-50%) translateY(0);
+          transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  -webkit-animation: 0.3s opacity ease;
+          animation: 0.3s opacity ease;
+}
+
+@-webkit-keyframes opacity {
+  from {
+    -webkit-transform: translateX(-50%) translateY(20%);
+            transform: translateX(-50%) translateY(20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes opacity {
+  from {
+    -webkit-transform: translateX(-50%) translateY(20%);
+            transform: translateX(-50%) translateY(20%);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(-50%) translateY(0);
+            transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
+}
+
+.container {
+  position: relative;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  max-width: 768px;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container .how {
+  opacity: 1;
+  pointer-events: visible;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  width: 100%;
+  background: #121213;
+  color: #d7dadc;
+  z-index: 10;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
+          box-shadow: 0 0 100px rgba(0, 0, 0, 0.75);
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+@media screen and (max-width: 525px) {
+  .container .how {
+    padding: 0.5rem;
+  }
+}
+
+.container .how.disable {
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+}
+
+.container .how .close {
+  position: absolute;
+  right: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 1rem;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 525px) {
+  .container .how .close {
+    padding: 0 0.5rem;
+  }
+}
+
+.container .how .close div {
+  width: 100%;
+  height: 2px;
+  background: #838383;
+}
+
+.container .how .close div.line-1 {
+  -webkit-transform: translateY(11px);
+          transform: translateY(11px);
+}
+
+.container .how .close div.line-2 {
+  -webkit-transform: rotate(-90deg) translateX(-9px);
+          transform: rotate(-90deg) translateX(-9px);
+}
+
+.container .how p {
+  font-size: 0.9rem;
+  letter-spacing: 0.05px;
+  font-weight: 400;
+  margin: 0.5rem 0;
+}
+
+@media screen and (max-width: 525px) {
+  .container .how p {
+    font-size: 0.8rem;
+  }
+}
+
+.container .how p span {
+  font-weight: 700;
+}
+
+.container .how .header h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.container .how .line {
+  width: 100%;
+  height: 0.5px;
+  background: #838383;
+  margin: 1rem 0;
+}
+
+.container .how .examples h4 {
+  margin-bottom: 1rem;
+}
+
+.container .how .examples .example {
+  margin-bottom: 1.5rem;
+}
+
+.container .how .examples .example .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1rem;
+}
+
+.container .how .examples .example .row .cell {
+  border: 2px solid #3a3a3c;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  font-size: 25px;
+  line-height: 40px;
+  text-align: center;
+  color: #d7dadc;
+  font-weight: 500;
+  margin: 0 3px;
+}
+
+.container .how .examples .example .row .cell.green {
+  background: #538d4e;
+  border: 2px solid #538d4e;
+}
+
+.container .how .examples .example .row .cell.yellow {
+  background: #b59f3b;
+  border: 2px solid #b59f3b;
+}
+
+.container .how .examples .example .row .cell.gray {
+  background: #3a3a3c;
+  border: 2px solid #3a3a3c;
+}
+
+.container .nav {
+  position: relative;
+  width: 100%;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #3a3a3c;
+}
+
+.container .nav h1 {
+  font-size: 32px;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  pointer-events: none;
+  font-weight: 900;
+  color: #d7dadc;
+}
+
+@media screen and (max-width: 768px) {
+  .container .nav h1 {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .container .nav h1 {
+    font-size: 25px;
+  }
+}
+
+.container .nav .left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .nav .left .info svg {
+  fill: #838383;
+}
+
+.container .nav .left .info {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container .nav .left .version {
+  color: #838383;
+  margin-left: 0.1rem;
+}
+
+.container .nav .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.container .nav .right .settings svg {
+  fill: #838383;
+}
+
+.container .nav .right .rank svg {
+  fill: #838383;
+}
+
+.container .nav .right .settings,
+.container .nav .right .rank {
+  padding: 0.5rem;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.container .grid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[5];
+      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-rows: (1fr)[6];
+      grid-template-rows: repeat(6, 1fr);
+  gap: 5px;
+  padding: 1rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container .grid .cell {
+  border: 2px solid #3a3a3c;
+  width: 60px;
+  height: 60px;
+  background: transparent;
+  font-size: 35px;
+  line-height: 60px;
+  text-align: center;
+  color: #d7dadc;
+  font-weight: 500;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+  -webkit-backface-visibility: visible;
+          backface-visibility: visible;
+}
+
+@-webkit-keyframes rotation {
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+@keyframes rotation {
+  to {
+    -webkit-transform: rotateX(360deg);
+            transform: rotateX(360deg);
+  }
+}
+
+.container .grid .cell.anim {
+  -webkit-transform: rotateX(0);
+          transform: rotateX(0);
+  -webkit-animation: 1s rotation ease;
+          animation: 1s rotation ease;
+  -webkit-transition: 300ms;
+  transition: 300ms;
+}
+
+.container .grid .cell.green {
+  background: #538d4e;
+  border: 2px solid #538d4e;
+}
+
+.container .grid .cell.yellow {
+  background: #b59f3b;
+  border: 2px solid #b59f3b;
+}
+
+.container .grid .cell.gray {
+  background: #3a3a3c;
+  border: 2px solid #3a3a3c;
+}
+
+.container .grid .cell.active {
+  -webkit-animation-delay: none;
+          animation-delay: none;
+  border: 2px solid #838383;
+  -webkit-animation: 0.1s scale ease;
+          animation: 0.1s scale ease;
+}
+
+@-webkit-keyframes scale {
+  from {
+    -webkit-transform: scale(1.075);
+            transform: scale(1.075);
+  }
+}
+
+@keyframes scale {
+  from {
+    -webkit-transform: scale(1.075);
+            transform: scale(1.075);
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .container .grid .cell {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    line-height: 50px;
+  }
+}
+
+.container .keyboard {
+  padding: 0.5rem;
+}
+
+.container .keyboard .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .keyboard .row .key {
+  background: #818384;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  border-radius: 0.25rem;
+  display: inline-block;
+  margin: 0.2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #d7dadc;
+}
+
+.container .keyboard .row .key.green {
+  background: #538d4e;
+}
+
+.container .keyboard .row .key.yellow {
+  background: #b59f3b;
+}
+
+.container .keyboard .row .key.gray {
+  background: #3a3a3c;
+}
+
+.container .keyboard .row .key i {
+  pointer-events: none;
+}
+
+.container .keyboard .row .key:active {
+  background: #6b6b6b;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+@media screen and (max-width: 768px) {
+  .container .keyboard .row .key {
+    padding: 1rem 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  .container .keyboard .row .key {
+    padding: 0.75rem 0.4rem;
+    font-size: 0.75rem;
+    margin: 0.15rem;
+  }
+}
+
+.container .keyboard.disable {
+  pointer-events: none;
+}
+/*# sourceMappingURL=main.css.map */
